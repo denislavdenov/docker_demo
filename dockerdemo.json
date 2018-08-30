@@ -1,7 +1,7 @@
 {
-  "builders": [{
+    "builders": [{
     "type": "docker",
-    "image": "debian",
+    "image": "ubuntu",
     "commit": "true"
   }],
  "provisioners": [
@@ -14,9 +14,17 @@
     [
       {
         "type": "docker-tag",
-        "repository": "denislavdenov/docker_demo",
-        "tag": "0.1"
+        "repository": "denislavd/docker_demo",
+        "tag": "0.0.2",
+        "force":"true"
+      },
+      {
+        "type": "docker-push",
+        "login": "true",
+        "login_username": "",
+        "login_password": ""
       }
     ]
   ]
 }
+
