@@ -7,7 +7,7 @@
  "provisioners": [
     {
       "type": "shell",
-      "inline": ["echo 'hello!' > /root/hello/file"]
+      "inline": ["echo 'hello!' > /root/hello"]
     }
   ],
   "post-processors": [
