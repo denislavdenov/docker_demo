@@ -1,5 +1,11 @@
 {
-    "builders": [{
+   "variables": {
+        "duser": "{{env `duser`}}",
+        "dpass": "{{env `dpass`}}"
+},
+
+
+   "builders": [{
     "type": "docker",
     "image": "ubuntu",
     "commit": "true"
@@ -15,16 +21,15 @@
       {
         "type": "docker-tag",
         "repository": "denislavd/docker_demo",
-        "tag": "0.0.2",
+        "tag": "0.0.3",
         "force":"true"
       },
       {
         "type": "docker-push",
         "login": "true",
-        "login_username": "",
-        "login_password": ""
+        "login_username": "{{user `duser`}}",
+        "login_password": "{{user `dpass`}}"
       }
     ]
   ]
 }
-
